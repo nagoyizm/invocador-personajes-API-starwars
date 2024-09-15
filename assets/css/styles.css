@@ -1,26 +1,82 @@
+/*aca se definen las animaciones que se van a usar en el proyecto*/
+/*las keyframes son los distintos estados de la animacion*/
+/*el 0% es el estado inicial de la animacion*/
+/*el 100% es el estado final de la animacion*/
+
 @keyframes hologram {
+    /* Define la animación inicial del holograma */
     0% {
-      opacity: 0;
-      transform: scale(0.8);
-      filter: blur(10px) brightness(2);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.05);
-      filter: blur(5px) brightness(1.5);
+      opacity: 0; /* Comienza completamente transparente */
+      transform: scaleY(0.8); /* Ligeramente comprimido verticalmente */
+      filter: blur(5px) brightness(1.5); /* Borroso y brillante */
     }
     100% {
-      opacity: 1;
-      transform: scale(1);
-      filter: blur(0) brightness(1);
+      opacity: 1; /* Termina completamente visible */
+      transform: scaleY(1); /* Tamaño vertical normal */
+      filter: blur(0) brightness(1); /* Sin desenfoque y brillo normal */
+    }
+  }
+  
+  @keyframes flicker {
+    /* Crea un efecto de parpadeo sutil */
+    0%, 100% { opacity: 1; } /* Completamente visible al inicio y final */
+    50% { opacity: 0.8; } /* Ligeramente transparente en el medio */
+  }
+  
+  @keyframes scanlines {
+    /* Anima las líneas de escaneo */
+    0% {
+      background-position: 0 0; /* Posición inicial de las líneas */
+    }
+    100% {
+      background-position: 0 100%; /* Mueve las líneas hacia abajo */
     }
   }
   
   .animate-hologram {
-    animation: hologram 1s ease-out forwards, flicker 5s infinite;
+    /* Aplica las animaciones de holograma y parpadeo */
+    animation: 
+      hologram 0.5s ease-out forwards, /* Efecto de aparición */
+      /* Esta línea define la animación para el efecto de holograma */
+      /* '0.5s' es la duración de la animación (medio segundo) */
+      /* 'ease-out' es la función de temporización, hace que la animación comience rápido y termine lento */
+      /* 'forwards' mantiene el estado final de la animación después de que termine */
+      flicker 4s infinite; /* Parpadeo continuo */
   }
   
-  @keyframes flicker {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.9; }
+  .hologram-effect {
+    position: relative; /* Necesario para posicionar los pseudo-elementos */
+    overflow: hidden; /* Oculta cualquier contenido que se salga */
+  }
+  
+  .hologram-effect::before {
+    /* Crea las líneas de escaneo */
+    content: ''; /* Necesario para que el pseudo-elemento sea visible */
+    position: absolute; /* Posiciona sobre el elemento padre */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cubre todo el elemento */
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 255, 0.1), /* Línea cyan transparente */
+      rgba(0, 255, 255, 0.1) 1px, /* Ancho de la línea cyan */
+      transparent 1px, /* Espacio transparente */
+      transparent 2px /* Ancho total de cada repetición */
+    );
+    animation: scanlines 10s linear infinite; /* Anima las líneas */
+    /* '10s' es la duración de la animación (10 segundos) */
+    /* 'linear' es la función de temporización, hace que la animación tenga una velocidad constante */
+    /* 'infinite' hace que la animación se repita indefinidamente */
+    pointer-events: none; /* Permite interactuar con el elemento debajo */
+  }
+  
+  .hologram-effect::after {
+    /* Crea el brillo central del holograma */
+    content: ''; /* Necesario para que el pseudo-elemento sea visible */
+    position: absolute; /* Posiciona sobre el elemento padre */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cubre todo el elemento */
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 255, 255, 0.3) 0%, /* Centro brillante cyan */
+      rgba(0, 0, 255, 0) 70% /* Se desvanece hacia los bordes */
+    );
+    pointer-events: none; /* Permite interactuar con el elemento debajo */
   }

@@ -148,7 +148,7 @@
 
         crearTarjeta() {
             const div = document.createElement('div');
-            div.className = 'flex flex-row bg-gray-800 w-[30%] h-[150px] text-yellow-300 p-4 m-2 rounded-lg shadow-lg border border-yellow-600 hover:border-blue-400 transition-all duration-300 animate-hologram';
+            div.className = 'flex flex-row bg-gray-800 bg-opacity-50 w-[30%] h-[150px] text-blue-300 p-4 m-2 rounded-lg shadow-lg border border-blue-400 hover:border-blue-300 transition-all duration-300 animate-hologram hologram-effect';
             //la imagen se obtiene de la api de star wars visual guide
             const imagenUrl = `https://starwars-visualguide.com/assets/img/characters/${this.id}.jpg`;
             div.innerHTML = `
