@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Tailwind</title>
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins y Pathway Gothic One -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+     <style type="text/tailwindcss">
+        @layer utilities {
+          .font-nueva {
+            font-family: 'Tu Nueva Fuente', sans-serif;
+          }
+          .font-starwars {
+            font-family: 'Pathway Gothic One', sans-serif;
+          }
+        }
+      </style>
+
+
+
+
+</head>
+<body class="bg-[url('https://img.freepik.com/free-photo/3d-hyperspace-background-with-warp-tunnel-effect_1048-12526.jpg?t=st=1726418074~exp=1726421674~hmac=186aabe8064acc810f36033229c83be2c8fdad1633b43b042d29899715cfbb3a&w=900')] bg-cover bg-center h-screen bg-fixed">
+    <h1 class="text-4xl uppercase font-bold text-center tracking-widest text-yellow-300 mt-[50px] font-starwars">Dimensiones de la vida real de los personajes de</h1>
+    <img src="https://images.launchbox-app.com/23b764ac-86a6-4a5d-9d06-e3f223b9b885.png" alt="Star Wars" class="w-1/5 mx-auto mt-5">
+
+ 
+
+    <section id="primerSection" class="mt-[50px] relative flex flex-row ml-[20px] justify-left min-h-[200px]">
+        <div class="absolute left-[45px] top-0 bottom-0 w-[0.5px] bg-white"></div>
+        <!-- contenedor de circulo y texto -->
+        <div class="flex flex-row items-start ">
+            <div class="text-sm text-white ml-[5px] w-[40px] mt-[10px]">1-5</div>
+            <div class="relative">
+                <div class="absolute top-[10px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-300 z-10"></div>
+            </div>
+        </div>
+            
+        
+        <div id="contenedorCajasPrimero" class="flex flex-wrap ml-[10px] w-full">
+            <div id="primeraCaja" class="bg-gray-900 flex flex-row justify-between w-[30%] h-[150px] text-gray-200 p-4 m-2 rounded-lg shadow-lg border border-yellow-400 border-opacity-50">
+                <div class="w-5 h-5 rounded-full bg-red-600"></div>
+                <div class="flex flex-col w-5/6">
+                    <h4 class="text-xl font-bold font-starwars text-yellow-400 uppercase tracking-wider">En esta sección...</h4>
+                    <p class="text-sm mt-2">Encontrarás información sobre los personajes más populares de las películas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <section id="segundoSection" class="relative  flex flex-row ml-[20px] justify-left min-h-[200px]">
+        <div class="absolute left-[45px] top-0 bottom-0 w-[0.5px] bg-white"></div>
+        <!-- contenedor de circulo y texto -->
+        <div class="flex flex-row items-start">
+            <div class="text-sm ml-[5px] text-white w-[40px] mt-[10px]">6-10</div>
+            <div class="relative">
+                <div class="absolute top-[10px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-300 z-10"></div>
+            </div>
+        </div>
+            
+        
+        <div id="contenedorCajasSegundo" class="flex flex-wrap ml-[10px] w-full">
+            <div id="segundaCaja"class="bg-gray-900 flex flex-row justify-between w-[30%] h-[150px] text-gray-200 p-4 m-2 rounded-lg shadow-lg border border-yellow-400 border-opacity-50">
+                <div class=" w-5 h-5 rounded-full bg-blue-500 "></div>
+                <div class="flex flex-col w-5/6">
+                    <h4 class="text-xl font-bold font-starwars text-yellow-400 uppercase tracking-wider">En esta sección...</h4>
+                    <p class="text-sm mt-2">Encontrarás información sobre los personajes secundarios de las películas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+
+    <section id="tercerSection" class="relative flex flex-row ml-[20px] justify-left min-h-[200px]">
+        <div class="absolute left-[45px] top-0 bottom-0 w-[0.5px] bg-white"></div>
+        <!-- contenedor de circulo y texto -->
+        <div class="flex flex-row items-start">
+            <div class="text-sm ml-[5px] text-white w-[40px] mt-[10px]">11-15</div>
+            <div class="relative">
+                <div class="absolute top-[10px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-yellow-300 z-10"></div>
+            </div>
+        </div>
+        
+        <div id="contenedorCajasTercero" class="flex flex-wrap ml-[10px] w-full">
+            <div id="tercerCaja"class="bg-gray-900 flex flex-row justify-between w-[30%] h-[150px] text-gray-200 p-4 m-2 rounded-lg shadow-lg border border-yellow-400 border-opacity-50">
+                <div class=" w-5 h-5 rounded-full bg-green-500 "></div>
+                <div class="flex flex-col w-5/6">
+                    <h4 class="text-xl font-bold font-starwars text-yellow-400 uppercase tracking-wider">En esta sección...</h4>
+                    <p class="text-sm mt-2">Encontrarás información sobre otros personajes de las peliculas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
