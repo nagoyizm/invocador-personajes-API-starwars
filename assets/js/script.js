@@ -74,19 +74,19 @@
     // Esta función prepara los eventos para mostrar nuevos personajes cuando el mouse sale de cada caja
     function agregarEventoMouseover() {
         if (primeraCaja && contenedorCajasPrimero) {
-            primeraCaja.addEventListener("mouseleave", () => mostrarSiguientePersonaje(generadorPersonajes1, contenedorCajasPrimero, primeraCaja));
+            primeraCaja.addEventListener("click", () => mostrarSiguientePersonaje(generadorPersonajes1, contenedorCajasPrimero, primeraCaja));
             console.log("Evento agregado a primeraCaja");
         } else {
             console.error("No se encontró primeraCaja o contenedorCajasPrimero");
         }
         if (segundaCaja && contenedorCajasSegundo) {
-            segundaCaja.addEventListener("mouseleave", () => mostrarSiguientePersonaje(generadorPersonajes2, contenedorCajasSegundo, segundaCaja));
+            segundaCaja.addEventListener("click", () => mostrarSiguientePersonaje(generadorPersonajes2, contenedorCajasSegundo, segundaCaja));
             console.log("Evento agregado a segundaCaja");
         } else {
             console.error("No se encontró segundaCaja o contenedorCajasSegundo");
         }
         if (tercerCaja && contenedorCajasTercero) {
-            tercerCaja.addEventListener("mouseleave", () => mostrarSiguientePersonaje(generadorPersonajes3, contenedorCajasTercero, tercerCaja));
+            tercerCaja.addEventListener("click", () => mostrarSiguientePersonaje(generadorPersonajes3, contenedorCajasTercero, tercerCaja));
             console.log("Evento agregado a tercerCaja");
         } else {
             console.error("No se encontró tercerCaja o contenedorCajasTercero");
@@ -118,7 +118,7 @@
         } else {
             //si el generador termino, se elimina el evento de mouseleave
             console.log(`No hay más personajes disponibles para: ${caja.id}`);
-            caja.removeEventListener("mouseleave", () => mostrarSiguientePersonaje(generador, contenedor, caja));
+            caja.removeEventListener("click", () => mostrarSiguientePersonaje(generador, contenedor, caja));
         }
     }
 
